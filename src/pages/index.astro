@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ResearchCard from '../components/ResearchCard.astro';
-import SocialIcon from '../components/SocialIcon.astro';
 import PublicationsList from '../components/PublicationsList.astro';
 
 const researchInterests = [
@@ -11,14 +10,6 @@ const researchInterests = [
     { href: 'https://indico.cern.ch/event/1603161/contributions/6755302/attachments/3159774/5613472/general_exam_milescb.pdf', icon: 'fa-atom', text: 'Particle Physics', external: true },
     { href: 'https://link.springer.com/article/10.1007/JHEP03(2025)010', icon: 'fa-bolt', text: 'High Energy Physics', external: true },
     { href: '/projects/plant-monitor', icon: 'fa-network-wired', text: 'Internet of Things' },
-];
-
-const socialLinks = [
-    { href: 'mailto:milescb@uw.edu', title: 'Email', ariaLabel: 'Email Address', icon: 'fas fa-envelope' },
-    { href: 'https://www.linkedin.com/in/mgcb', title: 'LinkedIn', ariaLabel: 'LinkedIn Profile', icon: 'fab fa-linkedin' },
-    { href: 'https://github.com/milescb', title: 'GitHub', ariaLabel: 'GitHub Profile', icon: 'fab fa-github' },
-    { href: 'https://gitlab.cern.ch/mcochran', title: 'GitLab', ariaLabel: 'GitLab Profile', icon: 'fab fa-gitlab' },
-    { href: 'https://orcid.org/0000-0003-1020-1108', title: 'ORCID', ariaLabel: 'ORCID Profile', icon: 'ai ai-orcid' },
 ];
 ---
 
@@ -49,13 +40,4 @@ const socialLinks = [
         </section>
         
         <PublicationsList selectedOnly={true} />
-
-        <section class="social-section">
-            <h2 class="visually-hidden" id="connect">Connect</h2>
-            <div class="social-icons">
-                {socialLinks.map(link => (
-                    <SocialIcon {...link} />
-                ))}
-            </div>
-        </section>
     </main>
