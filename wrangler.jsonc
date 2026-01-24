@@ -12,5 +12,15 @@
 	},
 	"observability": {
     "enabled": true
-  }
+  },
+	"routes": [
+		{
+			"pattern": "milescb.com",
+			"custom_domain": true
+		},
+		{
+			"pattern": "www.milescb.com",
+			"custom_domain": true
+		}
+	]
 }
