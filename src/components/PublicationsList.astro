@@ -1,0 +1,154 @@
+---
+import {
+  parseBibTeX,
+  formatAuthors,
+  processLatex,
+  getVenueInfo,
+  getLinkUrl,
+} from "../lib/bibtex";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+interface Props {
+  selectedOnly?: boolean;
+}
+
+const { selectedOnly = true } = Astro.props;
+
+// Read the BibTeX file
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const bibPath = join(__dirname, "../..", "public/content/documents/publications.bib");
+const bibContent = readFileSync(bibPath, "utf-8");
+
+// Parse BibTeX
+const allPublications = parseBibTeX(bibContent);
+
+// Filter by type
+const articles = allPublications.filter(
+  (pub) =>
+    pub.type === "article" ||
+    (pub.fields.type && pub.fields.type.toLowerCase() === "article")
+);
+
+const invitedTalks = allPublications.filter(
+  (pub) => pub.fields.note && pub.fields.note.toLowerCase().includes("invited")
+);
+
+const presentations = allPublications.filter(
+  (pub) =>
+    (pub.type === "presentation" ||
+      (pub.fields.type &&
+        pub.fields.type.toLowerCase() === "presentation")) &&
+    !invitedTalks.includes(pub)
+);
+
+// Filter selected if needed
+const displayArticles = selectedOnly
+  ? articles.filter((pub) => pub.selected)
+  : articles;
+const displayInvitedTalks = selectedOnly
+  ? invitedTalks.filter((pub) => pub.selected)
+  : invitedTalks;
+const displayPresentations = selectedOnly
+  ? presentations.filter((pub) => pub.selected)
+  : presentations;
+---
+
+<section class="publications-section">
+
+  {displayArticles.length > 0 && (
+    <>
+      {!selectedOnly && <h2 id="journal-articles">Journal Articles</h2>}
+      {selectedOnly && <h2 id="publications">Select Publications</h2>}
+      <ul class="publication-list">
+        {displayArticles.map((pub) => {
+          const linkUrl = getLinkUrl(pub);
+          const venueInfo = getVenueInfo(pub);
+          const authors = formatAuthors(pub.fields.author, 5);
+
+          return (
+            <li class="publication-item">
+              {linkUrl ? (
+                <a href={linkUrl} target="_blank" class="publication-link-wrapper">
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </a>
+              ) : (
+                <div>
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  )}
+
+  {displayInvitedTalks.length > 0 && (
+    <>
+      <h2 id="invited-talks">Invited Talks</h2>
+      <ul class="publication-list">
+        {displayInvitedTalks.map((pub) => {
+          const linkUrl = getLinkUrl(pub);
+          const venueInfo = getVenueInfo(pub);
+          const authors = formatAuthors(pub.fields.author, 5);
+
+          return (
+            <li class="publication-item">
+              {linkUrl ? (
+                <a href={linkUrl} target="_blank" class="publication-link-wrapper">
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </a>
+              ) : (
+                <div>
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  )}
+
+  {displayPresentations.length > 0 && (
+    <>
+      <h2 id="presentations-posters">Presentations & Posters</h2>
+      <ul class="publication-list">
+        {displayPresentations.map((pub) => {
+          const linkUrl = getLinkUrl(pub);
+          const venueInfo = getVenueInfo(pub);
+          const authors = formatAuthors(pub.fields.author, 5);
+
+          return (
+            <li class="publication-item">
+              {linkUrl ? (
+                <a href={linkUrl} target="_blank" class="publication-link-wrapper">
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </a>
+              ) : (
+                <div>
+                  <div class="pub-title">{processLatex(pub.fields.title)}</div>
+                  <div class="pub-authors">{authors}</div>
+                  <div class="pub-venue" set:html={venueInfo + "."}></div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  )}
+</section>

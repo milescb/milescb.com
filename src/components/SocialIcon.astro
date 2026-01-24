@@ -1,0 +1,14 @@
+---
+interface Props {
+    href: string;
+    title: string;
+    ariaLabel: string;
+    icon: string;
+}
+
+const { href, title, ariaLabel, icon } = Astro.props;
+---
+
+<a {href} {title} aria-label={ariaLabel}>
+    <i class:list={icon.split(" ")}></i>
+</a>

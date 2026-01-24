@@ -1,0 +1,237 @@
+/* Layout styles for academic website */
+
+/* Profile intro - image and intro side by side */
+.profile-intro {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.profile-intro h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+/* Sidebar styling */
+.sidebar {
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+/* Content section styling */
+.content-section {
+    margin-bottom: 30px;
+}
+
+/* Full-width sections that appear below the main content */
+.full-width-section {
+    clear: both;
+    width: 100%;
+    /* margin: 40px 0;
+    padding-top: 20px; */
+}
+
+/* Publications styling */
+.publication-list {
+    list-style-type: none;
+    padding-left: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.publication-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--card-bg);
+    border-radius: 0 5px 5px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* New wrapper for making the whole item clickable */
+.publication-link-wrapper {
+    display: block;
+    padding: 15px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.publication-link-wrapper:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pub-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.pub-title a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.pub-title a:hover {
+    text-decoration: underline;
+}
+
+.pub-authors {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.pub-venue {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.pub-count {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 20px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.social-icons a {
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.social-icons i {
+    font-size: 64px;
+    color: var(--accent-color);
+}
+
+/* Research interests styling */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+    width: 100%;
+}
+
+.research-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid var(--accent-color);
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Anchored research cards should look identical to div cards (no link highlighting) */
+a.research-card {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.research-card:hover,
+a.research-card:focus,
+a.research-card:active,
+a.research-card:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.research-icon {
+    font-size: 28px;
+    color: var(--accent-color);
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+
+.research-text {
+    font-weight: 500;
+}
+
+footer {
+    font-size: 1.2em;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+
+    .profile-intro {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .social-icons {
+        gap: 25px;
+    }
+    
+    .social-icons i {
+        font-size: 54px;
+    }
+
+    .research-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}

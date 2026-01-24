@@ -1,0 +1,21 @@
+---
+interface Props {
+    href: string;
+    icon: string;
+    text: string;
+    external?: boolean;
+}
+
+const { href, icon, text, external = false } = Astro.props;
+---
+
+<a 
+    class="research-card" 
+    href={href}
+    {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+>
+    <div class="research-icon">
+        <i class:list={["fas", icon]}></i>
+    </div>
+    <div class="research-text">{text}</div>
+</a>

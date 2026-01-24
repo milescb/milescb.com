@@ -1,17 +1,61 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+import PublicationsList from '../components/PublicationsList.astro';
 
+const researchInterests = [
+    { href: '/projects/pinn', icon: 'fa-brain', text: 'Machine Learning' },
+    { href: 'https://github.com/milescb/traccc-aaS', icon: 'fa-microchip', text: 'Coprocessor accelerated algorithms', external: true },
+    { href: '/projects/traccc', icon: 'fa-cloud', text: 'Inference as-a-service' },
+    { href: 'https://indico.cern.ch/event/1603161/contributions/6755302/attachments/3159774/5613472/general_exam_milescb.pdf', icon: 'fa-atom', text: 'Particle Physics', external: true },
+    { href: 'https://link.springer.com/article/10.1007/JHEP03(2025)010', icon: 'fa-bolt', text: 'High Energy Physics', external: true },
+    { href: '/projects/plant-monitor', icon: 'fa-network-wired', text: 'Internet of Things' },
+];
+
+const socialLinks = [
+    { href: 'mailto:milescb@uw.edu', title: 'Email', ariaLabel: 'Email Address', icon: 'fas fa-envelope' },
+    { href: 'https://www.linkedin.com/in/mgcb', title: 'LinkedIn', ariaLabel: 'LinkedIn Profile', icon: 'fab fa-linkedin' },
+    { href: 'https://github.com/milescb', title: 'GitHub', ariaLabel: 'GitHub Profile', icon: 'fab fa-github' },
+    { href: 'https://gitlab.cern.ch/mcochran', title: 'GitLab', ariaLabel: 'GitLab Profile', icon: 'fab fa-gitlab' },
+    { href: 'https://orcid.org/0000-0003-1020-1108', title: 'ORCID', ariaLabel: 'ORCID Profile', icon: 'ai ai-orcid' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Miles Cochran-Branson - Physics PhD Candidate">
+    <main class="container">
+        <section class="profile-intro">
+            <img class="profile-image" src="/content/images/profile.png" alt="Miles Cochran-Branson">
+            <div>
+                <h1>Miles Cochran-Branson</h1>
+                <p class="subtitle">Third-year Physics Ph.D. candidate at University of Washington</p>
+                <p>Hi! I'm Miles, a PhD candidate studying experimental, high energy, particle, physics. I'm interested in all things physics, in particular computational and mathematical physics and machine learning applications to fundamental experiment. Primarily, I am an experimentalist but am always looking to expand my horizons.</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <p>Currently, I am affiliated with the <a href="https://atlas.cern">ATLAS</a> collaboration at <a href="https://www.home.cern">CERN</a> through the University of Washington. The analysis I work on is focused on tau leptons; in particular, I am part of the team measuring the $H \to \tau\tau$ cross-section in the boosted regime and in measuring spin correlations in the $Z \to \tau\tau$ decay channel. Previously, I worked on the legacy Run 2 $H \rightarrow \tau\tau$ cross-section measurement and on algorithm development for $\tau$ energy scale calibration at the ATLAS experiment using a novel Mixture-Density-Network approach.</p>
+
+            <p>I am currently funded by the <a href="https://watchep.org">WATCHEP fellowship</a> which provides two years of funding for research in computation related to high-energy particle physics. For this fellowship, I am working on various implementations of particle tracking as-a-service. This includes GPU acceleration as-a-service with an <a href="https://github.com/milescb/traccc-aaS/tree/main">implementation</a> of the existing tracking library <a href="https://github.com/acts-project/traccc">traccc</a> and GNN as-a-service for the <a href="https://indico.jlab.org/event/459/papers/11414/files/1342-CHEP2023_GNN4ITK.pdf">GNN4ITk project</a>.</p>
+        </section>
+
+        <section class="research-section">
+            <h2 id="research">Research Interests</h2>
+            <div class="research-grid">
+                {researchInterests.map(card => (
+                    <ResearchCard {...card} />
+                ))}
+            </div>
+        </section>
+        
+        <PublicationsList selectedOnly={true} />
+
+        <section class="social-section">
+            <h2 class="visually-hidden" id="connect">Connect</h2>
+            <div class="social-icons">
+                {socialLinks.map(link => (
+                    <SocialIcon {...link} />
+                ))}
+            </div>
+        </section>
+    </main>
