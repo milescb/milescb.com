@@ -134,6 +134,12 @@ export const awards: Award[] = [
 // Outreach & Service
 export const serviceActivities: Activity[] = [
   {
+    title: "AI Future Lab Lecturer and Lab Leader",
+    date: 2026,
+    description:
+        "Prepared lab exercises on introductory AI coding concepts for 30 high-school students from Taiwan, and gave a lecture on AI ethics.",
+  },
+  {
     title: "Machine Learning Hackathon",
     date: 2025,
     description:
