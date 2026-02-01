@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import ResearchCard from '../components/ResearchCard.astro';
 import PublicationsList from '../components/PublicationsList.astro';
+import { Image } from 'astro:assets';
+import profileImage from '../content/images/profile.png';
 
 const researchInterests = [
     { href: '/projects/pinn', icon: 'fa-brain', text: 'Machine Learning' },
@@ -16,7 +18,15 @@ const researchInterests = [
 <Layout title="Miles Cochran-Branson - Physics PhD Candidate">
     <main class="container">
         <section class="profile-intro">
-            <img class="profile-image" src="/content/images/profile.png" alt="Miles Cochran-Branson">
+        <Image
+        class="profile-image"
+        src={profileImage}
+        alt="Miles Cochran-Branson"
+        width={400}
+        height={400}
+        loading="eager"
+        fetchpriority="high"
+        />
             <div>
                 <h1>Miles Cochran-Branson</h1>
                 <p class="subtitle">Third-year Physics Ph.D. candidate at University of Washington</p>
