@@ -41,6 +41,14 @@ const {
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('mjx-container[tabindex]').forEach((el) => {
+          el.removeAttribute('tabindex');
+        });
+      });
+    </script>
 </head>
 
 <body>
