@@ -34,7 +34,7 @@ const isProjectsActive = currentPath.startsWith('/projects');
                 </ul>
             </nav>
         </div>
-        <div class="toc-dropdown dropdown" id="toc-dropdown" style="display: none;">
+        <div class="toc-dropdown dropdown" id="toc-dropdown">
             <button class="dropdown-button" aria-label="Table of Contents">
                 <i class="fas fa-list"></i>
             </button>
@@ -47,13 +47,4 @@ const isProjectsActive = currentPath.startsWith('/projects');
     </div>
 </header>
 
-<script is:inline>
-    const showTOC = window.innerWidth > 800 || window.innerHeight > 600;
-    if (showTOC) {
-        const toc = document.getElementById('toc-dropdown');
-        if (toc) toc.style.display = 'block';
-        const script = document.createElement('script');
-        script.src = '/js/toc.js';
-        document.head.appendChild(script);
-    }
-</script>
+<script is:inline src="/js/toc.js"></script>

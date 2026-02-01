@@ -617,4 +617,8 @@ main a:hover {
     main {
         max-width: 100%;
     }
+
+    .toc-dropdown {
+        display: none !important;
+    }
 }
