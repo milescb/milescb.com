@@ -7,6 +7,7 @@
     --header-text: #ffd1e7;
     --title-text: #cf327b;
     --accent-color: #d56097;
+    --focus-color: #bd0259;
     --border-color: #eee;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --code-bg: #f6f8fa;
@@ -25,6 +26,7 @@
         --header-text: #ffd1e7;
         --title-text: #ffd1e7;
         --accent-color: #72a178;
+        --focus-color: #72a178;
         --border-color: #444;
         --shadow-color: rgba(0, 0, 0, 0.3);
         --code-bg: #2b2b2b;

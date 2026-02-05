@@ -71,15 +71,14 @@ nav ul li a {
 }
 
 nav ul li a:hover, nav ul li a:focus {
-    background-color: var(--accent-color);
-    border-radius: 3px;
+    color: var(--focus-color);
     text-decoration: none;
-    color: var(--header-text);
+    font-weight: 500;
 }
 
 nav ul li a.active {
-    background-color: var(--accent-color);
-    border-radius: 3px;
+    color: var(--focus-color);
+    font-weight: 500;
 }
 
 main {
@@ -127,7 +126,13 @@ nav .dropdown-button {
 }
 
 nav .dropdown-button:hover {
-    background-color: var(--accent-color);
+    color: var(--focus-color);
+    font-weight: 500;
+}
+
+nav .dropdown-button.active {
+    color: var(--focus-color);
+    font-weight: 500;
 }
 
 /* TOC dropdown button */
