@@ -1,3 +1,5 @@
+/* Color theme variables - light and dark mode */
+
 :root {
     /* Light theme (default) */
     --bg-color: rgb(255, 255, 255);
@@ -14,6 +16,8 @@
     --markdown-border: #eaecef;
     --table-stripe: #f6f8fa;
     --link-color: #0366d6;
+    --card-bg: #f9f9f9;
+    --sensor-card-bg: #f0f0f0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,5 +37,7 @@
         --markdown-border: #404040;
         --copy-button-bg: #4d4d4d;
         --link-color: #58a6ff;
+        --card-bg: #2d2d2d;
+        --sensor-card-bg: #3a3a3a;
     }
 }

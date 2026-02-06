@@ -1,4 +1,4 @@
-/* Layout styles for academic website */
+/* Profile/Index page styles */
 
 /* Profile intro - image and intro side by side */
 .profile-intro {
@@ -99,34 +99,6 @@
     opacity: 0.8;
 }
 
-/* Social icons styling */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin: 30px 0;
-    text-align: center;
-    width: 100%;
-}
-
-.social-icons a {
-    text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    display: inline-block;
-}
-
-.social-icons a:hover {
-    opacity: 0.8;
-    transform: scale(1.1);
-}
-
-.social-icons i {
-    font-size: 64px;
-    color: var(--accent-color);
-}
-
 /* Research interests styling */
 .research-grid {
     display: grid;
@@ -183,31 +155,10 @@ a.research-card:visited {
     font-weight: 500;
 }
 
-footer {
-    font-size: 1.2em;
-}
-
-/* For small screens */
-@media (max-width: 768px) {
-
+@media screen and (max-width: 600px) {
     .profile-intro {
         flex-direction: column;
-        gap: 1.5rem;
     }
-
-    .profile-image {
-        width: 200px;
-        height: 200px;
-    }
-
-    .social-icons {
-        gap: 25px;
-    }
-    
-    .social-icons i {
-        font-size: 54px;
-    }
-
     .research-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 15px;

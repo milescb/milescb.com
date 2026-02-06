@@ -2,6 +2,18 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+// Import CSS styles
+import '../styles/theme.css';
+import '../styles/global.css';
+import '../styles/typography.css';
+import '../styles/header.css';
+import '../styles/footer.css'
+import '../styles/dropdown.css';
+import '../styles/toc.css';
+import '../styles/profile.css';
+import '../styles/cv.css';
+import '../styles/utilities.css';
+
 interface Props {
     title?: string;
     description?: string;
@@ -24,11 +36,6 @@ const {
     <!-- External stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    
-    <!-- Custom stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/profile.css">
     
     <!-- MathJax for LaTeX rendering -->
     <script is:inline>

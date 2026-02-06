@@ -1,0 +1,51 @@
+/* Table of Contents (TOC) styles */
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.toc-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Clear base padding first to avoid conflicts */
+.toc-list a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 16px 6px 16px; /* Consistent padding on all sides */
+}
+
+/* Apply specific indentation for different header levels */
+.toc-h2 a {
+    padding-left: 16px;
+    font-weight: 500;
+}
+
+.toc-h3 a {
+    padding-left: 32px;
+    font-size: 0.95em;
+}
+
+.toc-list a:hover, 
+.toc-list a:focus {
+    background-color: var(--sensor-card-bg);
+    color: var(--accent-color);
+}
+
+.toc-list a.active {
+    background-color: var(--sensor-card-bg);
+    color: var(--accent-color);
+    font-weight: 500;
+}

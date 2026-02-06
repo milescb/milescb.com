@@ -1,0 +1,28 @@
+/* Typography styles - headings and text formatting */
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--title-text);
+}
+
+h2 {
+    color: var(--accent-color);
+    scroll-margin-top: 80px;
+}
+
+h3 {
+    color: var(--accent-color);
+    scroll-margin-top: 80px;
+}
+
+/* MathJax styling to match theme */
+.MathJax {
+    color: var(--text-color) !important;
+}
+
+.math-display {
+    margin: 1em 0;
+    overflow-x: auto;
+    max-width: 100%;
+}

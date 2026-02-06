@@ -1,0 +1,103 @@
+/* Dropdown menu styles for navigation and TOC */
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Navigation dropdown button (Projects menu) */
+nav .dropdown-button {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    padding: 0px 10px;
+    font-size: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+}
+
+nav .dropdown-button:hover {
+    color: var(--focus-color);
+    font-weight: 500;
+}
+
+nav .dropdown-button.active {
+    color: var(--focus-color);
+    font-weight: 500;
+}
+
+/* TOC dropdown button */
+.toc-dropdown .dropdown-button {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    padding: 8px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.toc-dropdown .dropdown-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Dropdown content panel */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 0px);
+    right: 0;
+    background-color: var(--container-bg);
+    min-width: 200px;
+    box-shadow: 0 8px 24px var(--shadow-color);
+    border-radius: 6px;
+    padding: 8px 0;
+    margin-top: 0;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+}
+
+/* Show dropdown on hover or focus */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-content.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TOC dropdown positioning */
+.toc-dropdown {
+    margin-left: auto; /* Pushes the element to the right */
+}
+
+@media screen and (max-width: 600px) {
+    .toc-dropdown {
+        display: none !important;
+    }
+}
