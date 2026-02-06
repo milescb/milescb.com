@@ -266,27 +266,6 @@ nav .dropdown-button.active {
     max-width: 100%;
 }
 
-/* PDF Viewer Styling */
-.pdf-container {
-    width: 100%;
-    margin: 20px 0;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px var(--shadow-color);
-}
-
-.pdf-fallback {
-    display: none;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Only show fallback if embed fails */
-embed[type="application/pdf"] + .pdf-fallback {
-    display: none;
-}
-
 /* CV Page Styling */
 .cv-header {
     display: flex;

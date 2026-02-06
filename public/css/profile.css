@@ -29,28 +29,6 @@
     flex-shrink: 0;
 }
 
-/* Sidebar styling */
-.sidebar {
-    margin-bottom: 30px;
-}
-
-.contact-info {
-    margin-bottom: 20px;
-}
-
-/* Content section styling */
-.content-section {
-    margin-bottom: 30px;
-}
-
-/* Full-width sections that appear below the main content */
-.full-width-section {
-    clear: both;
-    width: 100%;
-    /* margin: 40px 0;
-    padding-top: 20px; */
-}
-
 /* Publications styling */
 .publication-list {
     list-style-type: none;
