@@ -56,7 +56,7 @@ export const education: EducationEntry[] = [
     ],
   },
   {
-    degree: "Bachelor of Arts in Physics and Mathematics",
+    degree: "Bachelor of Arts in Physics, Summa Cum Laude",
     dateRange: "September 2019 - June 2023",
     institution: "Lawrence University",
     location: "Appleton, WI",
@@ -72,15 +72,15 @@ export const education: EducationEntry[] = [
 export const awards: Award[] = [
   {
     year: 2026,
-    title: "Analysis Fellowship",
-    organization: "IRIS-HEP",
-    amount: "$10,000",
+    title: "Graduate Student Research (SCGSR) Fellowship",
+    organization: "Department of Energy (DOE), Office of Science",
+    amount: "$21,600",
   },
   {
     year: 2026,
-    title: "Funding to develop a transformer for tau reconstruction",
-    organization: "ATLAS Center (ATC)",
-    amount: "$11,000",
+    title: "Analysis Fellowship",
+    organization: "IRIS-HEP",
+    amount: "$10,000",
   },
   {
     year: 2025,
@@ -158,7 +158,7 @@ export const serviceActivities: Activity[] = [
     description: "Undergraduate Symposium Moderator and Mentor.",
   },
   {
-    title: "IMOD outreach with Rainier Prep. Middle School",
+    title: "IMOD outreach with Rainier Prep Middle School",
     date: 2024,
     description:
       "Introduced experimental science to 90 fifth grade students through engaging interactive activities.",

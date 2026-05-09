@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ResearchCard from '../components/ResearchCard.astro';
 import PublicationsList from '../components/PublicationsList.astro';
 import { Image } from 'astro:assets';
-import profileImage from '../assets/images/profile.png';
+import profileImage from '../assets/images/profile.jpeg';
 
 const researchInterests = [
     { href: '/projects/pinn', icon: 'fa-brain', text: 'Machine Learning' },
@@ -30,14 +30,50 @@ const researchInterests = [
             <div>
                 <h1>Miles Cochran-Branson</h1>
                 <p class="subtitle">Third-year Physics Ph.D. candidate at University of Washington</p>
-                <p>Hi! I'm Miles, a PhD candidate studying experimental, high energy, particle, physics. I'm interested in all things physics, in particular computational and mathematical physics and machine learning applications to fundamental experiment. Primarily, I am an experimentalist but am always looking to expand my horizons.</p>
+                <p>
+                    Hi! I'm Miles, a PhD candidate studying experimental, high energy, particle, physics. 
+                    I'm interested in all things physics, in particular computational and mathematical 
+                    physics and machine learning applications to fundamental experiment. Primarily, 
+                    I am an experimentalist but am always looking to expand my horizons.
+                </p>
             </div>
         </section>
 
         <section class="about-content">
-            <p>Currently, I am affiliated with the <a href="https://atlas.cern">ATLAS</a> collaboration at <a href="https://www.home.cern">CERN</a> through the University of Washington. The analysis I work on is focused on tau leptons; in particular, I am part of the team measuring the $H \to \tau\tau$ cross-section in the boosted regime and in measuring spin correlations in the $Z \to \tau\tau$ decay channel. Previously, I worked on the legacy Run 2 $H \rightarrow \tau\tau$ cross-section measurement and on algorithm development for $\tau$ energy scale calibration at the ATLAS experiment using a novel Mixture-Density-Network approach.</p>
+        <p>
+            Currently, I am affiliated with the <a href="https://atlas.cern">ATLAS</a> collaboration 
+            at <a href="https://www.home.cern">CERN</a> through the University of Washington. 
+            The analysis I work on is focused on tau leptons; in particular, I am part of the team 
+            measuring the $H \to \tau\tau$ cross-section in the boosted regime and in measuring spin 
+            correlations in the $Z \to \tau\tau$ decay channel. Previously, I worked on the legacy 
+            Run 2 $H \rightarrow \tau\tau$ cross-section measurement and on algorithm development 
+            for $\tau$ energy scale calibration at the ATLAS experiment using a novel 
+            Mixture-Density-Network approach.
+        </p>
 
-            <p>I am currently funded by the <a href="https://watchep.org">WATCHEP fellowship</a> which provides two years of funding for research in computation related to high-energy particle physics. For this fellowship, I am working on various implementations of particle tracking as-a-service. This includes GPU acceleration as-a-service with an <a href="https://github.com/milescb/traccc-aaS/tree/main">implementation</a> of the existing tracking library <a href="https://github.com/acts-project/traccc">traccc</a> and GNN as-a-service for the <a href="https://indico.jlab.org/event/459/papers/11414/files/1342-CHEP2023_GNN4ITK.pdf">GNN4ITk project</a>.</p>
+        <p>
+            Recently, I was awarded the prestigious Department of Energy 
+            <a href="https://science.osti.gov/wdts/scgsr">Office of Science Graduate Student 
+            Research (SCGSR) fellowship</a>. While supporting me for sixth months, I will work
+            on developing a novel machine learning model that will encompass all tau reconstruction
+            tasks needed to do analysis with taus. This work will directly impact my analysis work
+            on tau leptons while providing necessary upgrades to legacy algorithms currently used in
+            tau reconstruction. 
+        </p>
+
+        <p>
+            Previously, I was funded by the <a href="https://watchep.org">WATCHEP fellowship</a> 
+            which provided two years of funding for research in computation related to high-energy 
+            particle physics. For this fellowship, I developed various implementations of particle 
+            tracking as-a-service. This included GPU acceleration as-a-service with an 
+            <a href="https://github.com/milescb/traccc-aaS/tree/main">implementation</a> of the 
+            existing tracking library <a href="https://github.com/acts-project/traccc">traccc</a> 
+            and GNN as-a-service for the 
+            <a href="https://indico.jlab.org/event/459/papers/11414/files/1342-CHEP2023_GNN4ITK.pdf">GNN4ITk project</a>. 
+            These efforts were recommended to be incorporated in upcoming runs of the LHC and I am 
+            currently working on integration and compatibility for the upcoming ATLAS data-taking 
+            with the High-Luminosity LHC. 
+        </p>
         </section>
 
         <section class="research-section">
