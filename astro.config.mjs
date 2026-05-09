@@ -16,5 +16,7 @@ export default defineConfig({
     rehypePlugins: [rehypeSlug, rehypeMathjax],
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare({
+    imageService: 'compile',
+  })
 });
