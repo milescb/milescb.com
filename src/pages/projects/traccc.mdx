@@ -11,7 +11,12 @@ Development of GPU-accelerated track reconstruction algorithms for high-energy p
 
 ## Background
 
-The High-Luminosity LHC will produce unprecedented amounts of collision data, requiring advanced algorithms to reconstruct particle trajectories in real-time.
+The High-Luminosity LHC will produce unprecedented amounts of collision data, requiring advanced algorithms to reconstruct particle trajectories in real-time. Standard rule-based tracking algorithms
+which run on the GPU will not be able to handle this huge increase in data. Thus, a GPU-version of
+these algorithms has been implemented. However, running this GPU algorithm at scale is not trivial. 
+Enter GPU tracking as-a-Service which decouples the inference from the rest of the reconstruction
+algorithm. This provides a simle and scalable solution for running tracking algorithms at the future
+HL-LHC.
 
 ## Objectives
 
@@ -19,15 +24,6 @@ The High-Luminosity LHC will produce unprecedented amounts of collision data, re
 - Implement inference-as-a-service architecture
 
 ## Technical Approach
-
-### GPU Acceleration
-
-Using CUDA and SYCL to parallelize:
-- Hit clustering
-- Seed finding
-- Track finding, fitting, and smoothing
-
-### GPU as a Service Architecture
 
 Rather than directly coupling CPU and GPU on the same node, we implement a coprocessor-as-a-Service (aaS) paradigm that separates the GPU algorithm onto a dedicated GPU server as shown below:
 
@@ -60,13 +56,14 @@ This GPU as a Service approach enables several key improvements:
 - **Future Performance Gains:** Less memory-hungry versions of TRACCC will enable significantly more model instances per GPU, approaching full GPU compute saturation
 - **Production Ready:** The architecture provides a scalable and reliable path for deploying GPU-accelerated particle tracking within production frameworks
 
-<img src="/content/images/throughput_gpu_util_old.pdf" alt="GPU Throughput and Utilization Scaling" style="max-width: 100%; height: auto; display: block; margin: 20px auto;" />
+{/* <img src="/content/images/throughput_gpu_util_old.pdf" alt="GPU Throughput and Utilization Scaling" style="max-width: 100%; height: auto; display: block; margin: 20px auto;" />
 
-*Performance scaling demonstrating throughput improvements and GPU utilization as multiple Triton model instances are deployed on a single GPU. The results show enhanced GPU efficiency through concurrent request management and multiple model instances.*
+*Performance scaling demonstrating throughput improvements and GPU utilization as multiple Triton model instances are deployed on a single GPU. The results show enhanced GPU efficiency through concurrent request management and multiple model instances.* */}
 
 ## Resources
 
 - [GitHub Repository](https://github.com/milescb/traccc-aaS)
 - [CERN Presentation](https://indico.cern.ch/event/1572204/contributions/6831725/attachments/3194328/5685546/uslua_traccc_aaS_2025.pdf)
+- [Simple Triton demonstrator](https://github.com/milescb/SimpleTritonExample), runs on NVIDIA and AMD hardware. 
 
 </main>

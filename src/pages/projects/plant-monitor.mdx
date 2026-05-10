@@ -32,14 +32,14 @@ Home plant care and environmental monitoring require consistent attention and ma
 ### Software Stack
 
 **Frontend:**
-- Responsive web interface with light/dark mode support
+- Responsive web interface
 - Real-time data visualization using JavaScript
 - Chart.js for moisture history graphs
 - Mobile-friendly design
 
 **Backend:**
 - Python services for MQTT subscription and database management
-- Gunicorn WSGI server with gevent workers for API endpoints
+- Gunicorn server for API endpoints
 - SQLite database for efficient time-series data storage
 - systemd integration for reliable service management
 
@@ -93,39 +93,11 @@ The system supports two deployment options:
 - **Low Power:** Efficient ESP8266 nodes with configurable sleep modes
 - **Modular Architecture:** Easy to add new sensors or modify plant configurations
 
-## Security Considerations
-
-The project implements multiple security layers:
-- SSH key-only authentication (password login disabled)
-- Firewall configuration with ufw
-- fail2ban integration for intrusion prevention
-- HTTPS/TLS encryption for web traffic
-- Regular security updates via systemd services
-- Network isolation for IoT devices
-
-**Warning:** Port forwarding exposes devices to potential attacks. The Cloudflare Tunnel approach is recommended for enhanced security without exposing home network ports.
-
-## Technical Challenges Solved
-
-1. **Analog Multiplexing:** Overcame ESP8266's single analog input limitation to read multiple moisture sensors
-2. **Service Reliability:** Implemented systemd services for automatic restart and system integration
-3. **Database Performance:** Optimized SQLite queries for efficient time-series data retrieval
-4. **Web Concurrency:** Used Gunicorn with gevent workers to handle multiple simultaneous API requests
-5. **Network Security:** Balanced external accessibility with home network security through Cloudflare Tunnel
-
 ## Resources
 
 - [Main Website Repository (PiWebsite)](https://github.com/milescb/PiWebsite)
 - [Arduino PlantMonitor Library](https://github.com/milescb/PlantMonitor)
 - [Live Website](https://crabdance.milescb.com/)
 - [Setup Instructions](https://crabdance.milescb.com/pages/info.html)
-
-## Future Enhancements
-
-- Integration with automated watering systems
-- Machine learning for plant health prediction
-- Email/SMS notifications for critical moisture levels
-- Additional sensor types (light levels, soil pH)
-- Mobile app development for iOS/Android
 
 </main>
