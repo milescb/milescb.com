@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import {
   education,
+  skills,
+  research,
   awards,
   serviceActivities,
   development,
@@ -34,6 +36,39 @@ import {
                         <div class="cv-entry-institution">{entry.institution}</div>
                         <div class="cv-entry-location">{entry.location}</div>
                         {entry.advisors && <div class="cv-entry-advisors">{entry.advisors}</div>}
+                        <ul class="cv-entry-details">
+                            {entry.details.map((detail) => (
+                                <li>{detail}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </section>
+
+            <section class="cv-section">
+                <h2 id="skills">Technical Skills</h2>
+
+                {skills.map((group) => (
+                    <div class="cv-award">
+                        <div class="cv-award-title">{group.category}</div>
+                        <div class="cv-award-org">{group.skills}</div>
+                    </div>
+                ))}
+            </section>
+
+            <section class="cv-section">
+                <h2 id="research">Research Experience</h2>
+
+                {research.map((entry) => (
+                    <div class="cv-entry">
+                        <div class="cv-entry-header">
+                            <div class="cv-entry-title">
+                                <strong>{entry.title}</strong>
+                            </div>
+                            <div class="cv-entry-date">{entry.dateRange}</div>
+                        </div>
+                        <div class="cv-entry-institution">{entry.institution}</div>
+                        <div class="cv-entry-location">{entry.location}</div>
                         <ul class="cv-entry-details">
                             {entry.details.map((detail) => (
                                 <li>{detail}</li>
