@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getImage } from 'astro:assets';
+import profileImage from '../assets/images/profile.jpeg';
 
 // Import CSS styles
 import '../styles/theme.css';
@@ -17,12 +19,39 @@ import '../styles/utilities.css';
 interface Props {
     title?: string;
     description?: string;
+    frontmatter?: { title?: string; description?: string };
 }
 
-const { 
-    title = 'Miles Cochran-Branson', 
-    description = 'Physics PhD candidate at University of Washington studying experimental high energy particle physics' 
-} = Astro.props;
+// MDX layouts receive their props under `frontmatter`
+const props = { ...Astro.props, ...Astro.props.frontmatter };
+const {
+    title = 'Miles Cochran-Branson',
+    description = 'Physics PhD candidate at University of Washington studying experimental high energy particle physics'
+} = props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL((await getImage({ src: profileImage, width: 600, format: 'jpg' })).src, Astro.site);
+
+const person = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Miles Cochran-Branson',
+    url: 'https://milescb.com',
+    image: ogImage.href,
+    jobTitle: 'Physics PhD Candidate',
+    worksFor: { '@type': 'CollegeOrUniversity', name: 'University of Washington' },
+    affiliation: { '@type': 'Organization', name: 'ATLAS Collaboration, CERN' },
+    knowsAbout: [
+        'Experimental High Energy Physics', 'Machine Learning', 'GPU Computing',
+        'Inference as-a-Service', 'NVIDIA Triton Inference Server', 'C++', 'Python',
+        'Track Reconstruction', 'ATLAS Athena', 'ROOT', 'Internet of Things', 'PyTorch',
+        'ONNX'
+    ],
+    sameAs: [
+        'https://www.linkedin.com/in/mgcb',
+        'https://github.com/milescb',
+        'https://orcid.org/0000-0003-1020-1108',
+    ],
+};
 ---
 
 <!DOCTYPE html>
@@ -32,6 +61,13 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={description}>
     <title>{title}</title>
+    <link rel="canonical" href={canonical}>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={canonical}>
+    <meta property="og:image" content={ogImage}>
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
     
     <!-- External stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">

@@ -10,6 +10,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://milescb.com',
   integrations: [mdx()],
 
   // ponytail: Astro's HTML compressor drops the space when a line ends
