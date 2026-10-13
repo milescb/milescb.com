@@ -18,5 +18,10 @@ Recipient of the DOE Office of Science Graduate Student Research (SCGSR) fellows
 
 ## Links
 
+- [Email](mailto:milescb@uw.edu)
+- [LinkedIn](https://www.linkedin.com/in/mgcb)
 - [GitHub](https://github.com/milescb)
+- [GitLab (CERN)](https://gitlab.cern.ch/mcochran)
+- [ORCID](https://orcid.org/0000-0003-1020-1108)
+- [Google Scholar](https://scholar.google.com/citations?user=M7JjKUMAAAAJ)
 - [traccc-aaS](https://github.com/milescb/traccc-aaS): Tracking as-a-Service implementation
