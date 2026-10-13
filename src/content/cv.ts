@@ -29,6 +29,19 @@ export interface Development {
   link: string;
 }
 
+export interface SkillGroup {
+  category: string;
+  skills: string;
+}
+
+export interface ResearchEntry {
+  title: string;
+  dateRange: string;
+  institution: string;
+  location: string;
+  details: string[];
+}
+
 export interface Membership {
   name: string;
 }
@@ -43,16 +56,17 @@ export const education: EducationEntry[] = [
     advisors: "Advisors: Quentin Buat, Xiangyang Ju (LBNL)",
     details: [
       "Courses taken: Deep Learning, Computer Systems, Quantum Field Theory, Theory of Solids",
+      "Candidacy achieved December 2025",
       "Research interests: Physics analysis, GPU acceleration, scientific machine learning",
     ],
   },
   {
     degree: "Master of Science in Physics",
-    dateRange: "September 2023 - June 2024",
+    dateRange: "September 2023 - June 2025",
     institution: "University of Washington",
     location: "Seattle, WA",
     details: [
-      "Courses taken: Quantum Mechanics, Electricity and Magnetism, Statistical Physics, Mechanics",
+      "Select courses taken: Quantum Mechanics, Electricity and Magnetism, Statistical Physics, Mechanics",
     ],
   },
   {
@@ -68,12 +82,74 @@ export const education: EducationEntry[] = [
   },
 ];
 
+// Technical Skills
+export const skills: SkillGroup[] = [
+  { category: "Languages", skills: "C++, Python, Julia, Bash" },
+  {
+    category: "Machine learning",
+    skills: "PyTorch, ONNX, NVIDIA Triton Inference Server, multi-node distributed training on HPC",
+  },
+  {
+    category: "Infrastructure",
+    skills: "Kubernetes, Docker, Dask, GPU throughput/latency profiling, Prometheus & Grafana monitoring",
+  },
+  {
+    category: "Scientific tools",
+    skills: "ROOT, ATLAS Athena, NumPy/SciPy, statistical fitting and systematics, Git/GitLab CI",
+  },
+];
+
+// Research Experience
+export const research: ResearchEntry[] = [
+  {
+    title: "Development of Transformer-based tau reconstruction AI model",
+    dateRange: "Jan. 2026 - present",
+    institution: "University of Washington and Lawrence Berkeley National Lab",
+    location: "Seattle, WA and Berkeley, CA",
+    details: [
+      "Developed and tested novel model architecture for tau reconstruction.",
+      "Implemented custom plotting analysis suite for benchmarking and performance evaluation.",
+    ],
+  },
+  {
+    title: "Deployment of GPU tracking as-a-Service for the ATLAS detector",
+    dateRange: "Jun. 2024 - present",
+    institution: "University of Washington and Lawrence Berkeley National Lab",
+    location: "Seattle, WA and Berkeley, CA",
+    details: [
+      "Implemented custom C++ backend to run inference at scale for online data-taking.",
+      "Developed deployment system on Kubernetes clusters for data-taking systems.",
+      "Extensively tested throughput and latency of pipeline through custom metrics and dashboards.",
+    ],
+  },
+  {
+    title: "Analysis of CP violation in Z → ττ events",
+    dateRange: "Sep. 2023 - present",
+    institution: "University of Washington and CERN",
+    location: "Seattle, WA and Geneva, CH",
+    details: [
+      "Novel analysis of di-tau final states using ATLAS data.",
+      "Developed understanding of the novel observable, analysis framework, and statistical fitting framework.",
+    ],
+  },
+  {
+    title: "Analysis Grand-Challenge Developer",
+    dateRange: "Jun. 2026 - present",
+    institution: "University of Washington",
+    location: "Seattle, WA",
+    details: [
+      "Developed and tested DASK-based tools to accelerate particle-physics analysis.",
+      "Implemented inference as-a-Service infrastructure and statistical analysis tools.",
+    ],
+  },
+];
+
 // Awards & Fellowships
 export const awards: Award[] = [
   {
     year: 2026,
-    title: "Graduate Student Research (SCGSR) Fellowship",
-    organization: "Department of Energy (DOE), Office of Science",
+    title: "Office of Science Graduate Student Research (SCGSR) Fellowship",
+    organization: "U.S. Department of Energy",
     amount: "$21,600",
   },
   {
@@ -109,25 +185,21 @@ export const awards: Award[] = [
     year: 2022,
     title: "J. Bruce Brackenridge Prize for excellence in physics",
     organization: "Lawrence University",
-    amount: "$500",
   },
   {
     year: 2022,
     title: "Maurice Cunningham Phi Beta Kappa Prize for highest GPA in junior class",
     organization: "Lawrence University",
-    amount: "$100",
   },
   {
     year: 2021,
     title: "Sir Isaac Newton (SIN) award for creativity in computational physics problem-solving",
     organization: "Lawrence University",
-    amount: "$100",
   },
   {
     year: 2021,
     title: "Ralph White Prize in Mathematics",
     organization: "Lawrence University",
-    amount: "$100",
   },
 ];
 
@@ -140,7 +212,7 @@ export const serviceActivities: Activity[] = [
         "Prepared lab exercises on introductory AI coding concepts for 30 high-school students from Taiwan, and gave a lecture on AI ethics.",
   },
   {
-    title: "Machine Learning Hackathon",
+    title: "U.W. A3D3 Machine Learning Hackathon",
     date: 2025,
     description:
       "Organized an ML hackathon at University of Washington for more than 30 students on AI prediction tasks using scientific data.",
@@ -158,7 +230,7 @@ export const serviceActivities: Activity[] = [
     description: "Undergraduate Symposium Moderator and Mentor.",
   },
   {
-    title: "IMOD outreach with Rainier Prep Middle School",
+    title: "IMOD outreach with Rainier Prep. Middle School",
     date: 2024,
     description:
       "Introduced experimental science to 90 fifth grade students through engaging interactive activities.",
@@ -195,11 +267,11 @@ export const development: Development[] = [
 
 // Memberships
 export const memberships: Membership[] = [
+  { name: "Accelerated AI Algorithms for Data-Driven Discovery (A3D3)" },
   { name: "Phi Beta Kappa (National Honors Society)" },
   { name: "Sigma Pi Sigma (Physics Honors Society)" },
-  { name: "American Physical Society" },
 ];
 
 // Mentoring text
 export const mentoringText =
-  "As a PhD student I have mentored three undergraduates in research techniques by introducing the ATLAS experiment to them, as well as instilling an excitement for physics research and discovery. In this role I organize weekly meetings and check-ins, as well as field questions and provide academic guidance.";
+  "As a PhD student I have mentored four undergraduates in research techniques by introducing the ATLAS experiment to them, as well as instilling an excitement for physics research and discovery. In this role I organize weekly meetings and check-ins, as well as field questions and provide academic guidance.";

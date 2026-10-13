@@ -1,0 +1,22 @@
+# Miles Cochran-Branson
+
+> Fourth-year Physics Ph.D. candidate at the University of Washington, working on experimental high energy particle physics with the ATLAS collaboration at CERN. Research focuses on tau leptons (CP violation in Z→ττ, tau reconstruction algorithms), machine learning, and GPU-accelerated / as-a-service computing for the High-Luminosity LHC.
+
+Recipient of the DOE Office of Science Graduate Student Research (SCGSR) fellowship and previously the WATCHEP fellowship.
+
+## Pages
+
+- [Home](https://milescb.com/): About, research interests, selected publications
+- [Publications](https://milescb.com/publications/): Full publication list
+- [CV](https://milescb.com/cv/): Education, experience, awards, activities
+
+## Projects
+
+- [GPU-Accelerated Track Reconstruction](https://milescb.com/projects/traccc/): traccc deployed as-a-service with NVIDIA Triton Inference Server for ATLAS at the HL-LHC
+- [Physics-Informed Neural Networks](https://milescb.com/projects/pinn/): Undergraduate thesis on PINNs that learn solutions to partial differential equations
+- [IoT Plant and Environment Monitor](https://milescb.com/projects/plant-monitor/): Raspberry Pi Zero 2W and ESP8266 sensor network with a web dashboard
+
+## Links
+
+- [GitHub](https://github.com/milescb)
+- [traccc-aaS](https://github.com/milescb/traccc-aaS): Tracking as-a-Service implementation
