@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 import rehypeSlug from 'rehype-slug';
@@ -11,7 +12,7 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://milescb.com',
-  integrations: [mdx()],
+  integrations: [mdx(), sitemap()],
 
   // ponytail: Astro's HTML compressor drops the space when a line ends
   // `</a> ` and the next line starts with text (e.g. "collaboration</a>at").

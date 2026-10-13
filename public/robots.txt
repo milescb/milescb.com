@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://milescb.com/sitemap-index.xml
